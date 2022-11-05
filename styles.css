@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Montserrat:wght@400;700&family=Ubuntu:wght@400;700&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --orange: hsl(16, 94%, 72%);
+    --green: hsl(180, 20%, 51%);
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "Lato", sans-serif;
+    background-color: hsl(25, 100%, 93%);
+    gap: 4rem;
+    justify-content: center;
+}
+
+main {
+    margin: 5rem auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section {
+    margin: 2rem auto;
+}
+
+ol {
+    text-decoration: none;
+}
+
+.card.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    /*animation: act 500ms;*/
+}
+
+@keyframes act {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.card {
+    box-shadow: 0 0 19px 0 hsla(25, 100%, 20%, 0.75);
+    padding: 1.5em 2em;
+    min-width: 25rem;
+    background-color: #fff;
+    border-radius: .25rem;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    /* For mobile phones: */
+    .card {
+        min-width: 20rem;
+    }
+}
+
+.title {
+    text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
+}
+
+.title, .subtitle {
+    color: black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: .25rem auto 0.85rem;
+}
+
+.subtitle {
+    margin-top: 0;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+    letter-spacing: .25em;
+}
+
+.inp {
+    display: block;
+    padding: 1rem 0.8rem;
+    width: 100%;
+    border-radius: .25rem;
+    border: 1px solid gray;
+}
+
+textarea[class="inp"] {
+    font-family: "Lato", sans-serif;
+}
+
+.inp:hover, .inp:focus {
+    border: 2px solid gray;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+
+.btn {
+    outline: none;
+    border: none;
+    width: 50%;
+    background-color: var(--orange);
+    border-radius: .25rem;
+    padding: 1rem 1.5rem;
+    display: inline-block;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);
+}
+
+.btn[type="submit"] {
+    background-color: hsl(16, 94%, 62%);
+    border: 2px solid hsl(16, 94%, 52%);
+}
+
+.btn:hover {
+    background-color: hsl(16, 94%, 52%);
+}
+
+.steps {
+    margin-bottom: .5rem;
+    overflow: hidden;
+    counter-reset: step;
+}
+
+.steps li {
+    list-style-type: none;
+    color: var(--green);
+    text-transform: uppercase;
+    font-size: .65rem;
+    width: 33.33%;
+    float: left;
+    position: relative;
+    text-align: center;
+}
+
+.steps li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 1.25rem;
+    line-height: 1.25rem;
+    display: block;
+    font-size: 0.8rem;
+    color: white;
+    background: var(--green);
+    border-radius: 3px;
+    margin: 0 auto 5px auto;
+}
+
+.steps li:after {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background: var(--green);
+    position: absolute;
+    left: -50%;
+    top: 9px;
+    z-index: -1;
+}
+
+.steps li:first-child:after {
+    content: none;
+}
+
+.steps li.active {
+    color: var(--orange);
+}
+
+.steps li.active:before, .steps li.active:after {
+    background: var(--orange);
+    color: white;
+}
+
+.slide-right {
+    animation: right 600ms forwards;
+}
+
+@keyframes right {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    20% {
+        transform: scale(.5);
+    }
+
+    50% {
+        transform: translateX(0);
+    }
+
+    99% {
+        transform: scale(.5) translateX(40rem);
+    }
+    100% {
+        transform: scale(0) translateX(60rem);
+        opacity: 0;
+    }
+}
+
+.slide-left {
+    animation: left 600ms forwards;
+}
+
+@keyframes left {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    20% {
+        transform: scale(.5);
+    }
+
+    50% {
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-60rem);
+    }
+}
+
+
+.attribution {
+    font-size: 0.8rem;
+    font-family: "Ubuntu", sans-serif;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}

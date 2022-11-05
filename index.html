@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Animated Multistep Form</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+<main>
+    <section class="progress-bar">
+        <ul class="steps">
+            <li class="active">Account Setup</li>
+            <li>Personal Details</li>
+            <li>Social Profiles</li>
+        </ul>
+    </section>
+    <form action="#" data-multi-step>
+        <div class="card active" data-step-number="0">
+            <h4 class="title">Create your account</h4>
+            <div class="inputs">
+                <input class="inp" type="email" placeholder="Email">
+                <input class="inp" type="password" placeholder="Password">
+                <input class="inp" type="password" placeholder="Confirm Password">
+            </div>
+            <div class="buttons">
+                <button type="button" class="btn next">Next</button>
+            </div>
+        </div>
+        <div class="card" data-step-number="1">
+            <div>
+                <h3 class="title">Personal details</h3>
+                <h6 class="subtitle">We will never sell it</h6>
+            </div>
+            <div class="inputs">
+                <input class="inp" type="text" name="firstName" id="first-name"
+                       placeholder="First Name">
+                <input class="inp" type="text" name="lastname" id="last-name"
+                       placeholder="Last Name">
+                <input class="inp" type="tel" name="phone" id="phone" placeholder="Phone">
+                <textarea class="inp" name="address" id="address" cols="30" rows="3"
+                          placeholder="Address"></textarea>
+            </div>
+            <div class="buttons">
+                <button type="button" class="btn prev">Previous</button>
+                <button type="button" class="btn next">Next</button>
+            </div>
+        </div>
+        <div class="card" data-step-number="2">
+            <div>
+                <h3 class="title">Social Profiles</h3>
+                <h6 class="subtitle">Your presence on the social network</h6>
+            </div>
+            <div class="inputs">
+                <input class="inp" type="text" name="twitter" id="twitter" placeholder="Twitter">
+                <input class="inp" type="text" name="facebook" id="facebook" placeholder="Facebook">
+                <input class="inp" type="text" name="linkedin" id="linkedin" placeholder="Linkedin">
+            </div>
+            <div class="buttons">
+                <button type="button" class="btn prev">Previous</button>
+                <button type="submit" class="btn">Submit</button>
+            </div>
+        </div>
+    </form>
+</main>
+
+<div class="attribution">
+    <p>Coded by <a href="https://github.com/ujjwalgarg100204">Ujjwal Garg</a>.</p>
+    <p>Form icon created by Freepik - <a href="https://www.flaticon.com/free-icons/google-forms"
+                                         title="google forms icons">Flaticon</a></p>
+</div>
+
+
+</body>
+</html>
